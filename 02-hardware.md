@@ -152,7 +152,7 @@ ___Pins Assigned for Rotary Encoder Input on the v4.x.x Board___
 * **GPIO 15** - SW (Switch) (_Marked as B_ENT on the PCB_)
 * **GPIO 16** - DT (Data) (_Marked as B_DOWN on the PCB_)
 * **3.3V**
-* 
+  
 [See Button/Encoder header pinout above...](#pcb-4xx-pinout)
 
 No additional board is needed as the pullups/pulldowns are already included on the KY040 boards. [Amazon Link](https://www.amazon.com/WayinTop-Degree-Encoder-Development-Arduino/dp/B07T3672VK)
