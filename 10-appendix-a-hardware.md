@@ -14,7 +14,7 @@ There are PCB designs which greatly reduce the wiring effort required for wiring
 #### 4.x.x PCB (and modules)
 
 The state of the art currently is the 4.x.x PCB set which consists of a main board that connects to the Raspberry Pi (Connects to almost any Raspberry Pi model with 40 pin header).  The main board must be paired up with a probe board (i.e. ADS1115 carrier board, or other probe device board(s)) as well as a relay/fan board. These boards are not as compact as the next board on this list, but has the most flexible/scalable options.
-  * [Link to the hardware page for more information.](https://https://nebhead.github.io/PiFire-Pages/hardware)
+  * [Link to the hardware page for more information.](https://nebhead.github.io/PiFire-Pages/hardware)
 
 #### Compact PWM PCB 
 

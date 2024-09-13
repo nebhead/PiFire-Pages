@@ -18,9 +18,9 @@ The fastest way to get up and running is to utilize one of the PCB designs. Ther
   * _Handy BOM List for the above PCB: [https://github.com/nebhead/PiFire/files/9720705/PiFire-PWM-1.2-2022-BOM.xlsx](https://github.com/nebhead/PiFire/files/9720705/PiFire-PWM-1.2-2022-BOM.xlsx)_
 
 * **3.0.x, 2.0.x PCBs** - Legacy PCB designs to be used with Raspberry Pi Zero W / 2W models.  These PCB designs are no longer recommended, but are still perfectly usable.
-  * _[Link to Appendix-A: Legacy Hardware](https://https://nebhead.github.io/PiFire-Pages/appendix-a)_
+  * _[Link to Appendix-A: Legacy Hardware](https://nebhead.github.io/PiFire-Pages/appendix-a)_
 
-* **Custom Build** - For the brave and curious, there is always the option to build your own from scratch as well, without using a PCB, which is described in [Appendix-A: Legacy Hardware](https://https://nebhead.github.io/PiFire-Pages/appendix-a).  
+* **Custom Build** - For the brave and curious, there is always the option to build your own from scratch as well, without using a PCB, which is described in [Appendix-A: Legacy Hardware](https://nebhead.github.io/PiFire-Pages/appendix-a).  
 
 ### 4.x.x PCB Details
 
