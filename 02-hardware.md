@@ -101,6 +101,15 @@ You must bridge solder jumpers on the back the board to select Chip Enable 0 or 
 
 ___I2C Headers___ - _All of the I2C headers pinouts are identical and can be used for any of the I2C devices including the ADC board, an I2C display, or an I2C distance device._
 
+#### PCB 4.x.x Board Family DigiKey BOMs
+
+User @StubbyTech on Discord has put together some DigiKey BOM files for some of the boards.  I've not verified all of the parts in these lists, but it's a great starting point to order parts if you don't already have some of these on hand.   
+
+ - Main Board: [https://www.digikey.com/en/mylists/list/LLQX6AUZOU](https://www.digikey.com/en/mylists/list/LLQX6AUZOU) (Note that while the EEPROM is included, it is not required or used currently)
+ - Relay Module SSR: [https://www.digikey.com/en/mylists/list/BZRJT3PQ1P](https://www.digikey.com/en/mylists/list/BZRJT3PQ1P)
+ - ADS Board: [https://www.digikey.com/en/mylists/list/1HC6VYPBZZ](https://www.digikey.com/en/mylists/list/1HC6VYPBZZ) 
+
+
 ### Displays
 
 PiFire doesn't require a display to be attached, but it is a nice addition to have.  The following are some supported options.  These can be selected during the initial configuration wizard. 
