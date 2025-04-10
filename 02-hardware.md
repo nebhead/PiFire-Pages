@@ -101,6 +101,8 @@ You must bridge solder jumpers on the back the board to select Chip Enable 0 or 
 
 ___I2C Headers___ - _All of the I2C headers pinouts are identical and can be used for any of the I2C devices including the ADC board, an I2C display, or an I2C distance device._
 
+![PCB 4.x.x Pinout Display SPI](/img/PiFire-PCB-v4-Pinout-I2C.png)
+
 #### PCB 4.x.x Board Family DigiKey BOMs
 
 User @StubbyTech on Discord has put together some DigiKey BOM files for some of the boards.  I've not verified all of the parts in these lists, but it's a great starting point to order parts if you don't already have some of these on hand.   

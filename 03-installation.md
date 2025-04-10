@@ -124,6 +124,15 @@ Follow the onscreen prompts to complete the installation.
 At the end of the script, the system will reboot.  Once the system has rebooted, you can then use your browser to complete the configuration.  
 ```
 
+#### Development Branch Installation Method
+
+For the more adventurous of you, you can install the development branch directly.  Note that by doing this, you may experience all of the risks inherent in bleeding edge, untested software.  Feedback on your experience with the development branch is always welcome.   
+
+```bash
+$ wget https://raw.githubusercontent.com/nebhead/pifire/development/auto-install/install.sh
+$ bash install.sh -dev
+```
+
 ### PiFire Configuration Wizard
 
 Once the initial installation script has run, the system will reboot and will be ready for the next step in the installation process, the configuration wizard.  
@@ -181,6 +190,16 @@ If you are using the ADC1115, it's important to click on the 'edit' button to co
 
 ![Wizard Probe Device Settings](img/webui/Wizard-02-Probes-Device-Settings.jpg)
 
+Beginning with the v1.9.0 release, certain Bluetooth food probes are supported (including Inkbird iBBQ and Meater/Meater Plus).  Select to add a Probe Input Device with the green plus button, then select your Bluetooth device from the list.
+
+Once selected, you can either enter the Hardware ID if you know it, or scan for the device.  For Meater Devices, you may need to remove the device from the block to see the correct Hardware ID. 
+
+![Wizard Probe Bluetooth Scan](img/webui/Wizard-02-Probes-Device-Bluetooth.png)
+
+![Wizard Probe Bluetooth Scan](img/webui/Wizard-02-Probes-Device-Bluetooth-Scanning.png)
+
+![Wizard Probe Bluetooth Scan](img/webui/Wizard-02-Probes-Device-Bluetooth-Devices.png)
+
 Next is the probe configuration.  In this section, you can define what probes you want PiFire to use.  By default, PiFire selects three probes: Grill(Primary), Probe-1(Food), Probe-2(Food).  These are mapped to the default ADS1115 ports from the previous section.  You can choose to edit/delete any of the existing ports, or you can add new probes. 
 
 ![Wizard Probes](img/webui/Wizard-02-Probes-Config.png)
@@ -198,8 +217,11 @@ Next select the Probe Type.  Probe Types are define as follows:
 
 Next, select a Probe Profile for this particular probe.  This is mainly utilized for ADC devices, and can be ignored for RTD style devices and Virtual Devices.  Note that probe profiles can be changed in the settings later on.  
 
-Lastly, select whether the probe should be enabled and visible in the UI. This setting currently isn't being honored by PiFire, but may at a future date.  Note that if the probe is an Aux probe it will not be displayed in the UI, regardless of this setting.  
+Lastly, select whether the probe should be enabled and visible in the UI.
 
+```note
+Note that if the probe is an Aux probe it will not be displayed in the UI, regardless of this setting.  
+```
 ##### Virtual Devices
 
 Virtual Devices can be used if you want to take input from multiple probes and perform some kind of math on those devices, which is output to a virtual port.  

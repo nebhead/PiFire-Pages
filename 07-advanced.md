@@ -3,6 +3,16 @@ title: "Advanced Information"
 permalink: /advanced
 sort: 7
 ---
+
+### Development and Contributing to PiFire
+
+Your contributions to the project are welcome and encouraged.  Many excellent features of PiFire were contributions from users just like you.  If you want to dive deeper into PiFire and possibly develop a pull-request on GitHub, please follow the below guidelines:
+
+- **Pull Requests**: When submitting PR's please make sure they are submitted on the **development** branch of PiFire.  All other PRs will be rejected unless you have explicit permission from the project owner. 
+- **Do no harm**:  Make sure you are not breaking others user experience when submitting a PR.  Ideally, isolate your feature / code into something new.  PiFire was designed with certain aspects to be modular so that you can create a new display, distance sensor, controller, etc.  without harming existing configurations.  Please do your best to follow these principles. 
+- **Document your Code** - Please document your code to the best of your ability so that the reviewers can understand what you are doing. 
+- **Test your Changes** - Try to test your changes extensively to ensure compatibility with many configurations. While it may not be possible in every case, it is very helpful to do some validation runs on your code to make sure it is stable before making pull requests. 
+
 ### Software Architecture
 
 For the more adventurous of you, who want to tweak, extend and improve PiFire for your purposes, I've tried to architect PiFire in a way to make it friendly to use on different hardware.  

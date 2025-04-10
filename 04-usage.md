@@ -22,9 +22,10 @@ If you setup a hostname (ex. pifire.local) when flashing your SD Card, it's like
 #### The Dashboard
 The interface / webui is broken out several pages. The first is the dashboard view where you can check the current status of the grill, and control the modes. Clicking the PiFire logo in the upper left will always take you back to the dashboard from whatever screen you are on.  
 
-![Dashboard](/img/webui/PiFire-Dashboard-00.png)
+![Dashboard](/img/webui/PiFire-Dashboard-01.png)
 
-Pressing the hamburger icon in the upper right of the interface, allows you to also access to the other screens.  
+
+Pressing/Clicking the menu items at the top of the page or the hamburger icon in the upper right of the interface (if on a small screen), allows you to also access to the other screens.  
 
 ```note
 You will not see temperatures displayed until you are in startup, operation, or monitor mode.  If you have an attached display, the screen will remain black/blank until Pifire is in startup, operation or monitor mode - or if you have interacted with the input(buttons or encoder knob). 
@@ -80,6 +81,26 @@ Example of icon that appears in error conditions:
 
 ![Error](/img/webui/PiFire-Dashboard-06.jpg)
 
+##### Notifications 
+
+If you have notifications configured (see Settings), you can setup notifications for different events from the dashboard. Clicking the bell/bell-slash icon will bring up a dialog for you to select notifications for a particular probe.
+
+```note
+Starting with v1.9.0, you *must* click on the toggle switch beside the particular notification type in the dialog box to enable that notification.  
+```
+
+![Notification Temperature Target](/img/webui/PiFire-Dashboard-07.png)
+
+- **Notification on Target Temperature** - A notification will be sent when a probe gets to a particular target temperature.  This is a one shot notification and will clear when it is achieved.  The user can also select to shutdown PiFire or go into Keep Warm mode when this temperature is achieved. 
+- **High Limit Temperature Alert Notification** - This notification will be sent when the temperature of this probe goes over the target temperature.  The notification is sent once, unless the temperature goes below the target and then above the target again.
+- **Low Limit Temperature Alert Notification** - This notification will be sent when the temperature of this probe goes below the target temperature.  The notification is sent once, unless the temperature goes above the target and then below the target again.
+
+##### Probe Configuration
+
+Starting with v1.9.0, the cog icon in the probe card will open a new dialog box that will allow you to configure the options for a particular probe.  This is useful if you want to change the probe name, probe profile (for ADC probes), or hide the probe from the UI more permanently. 
+
+![Probe Configuration](/img/webui/PiFire-Dashboard-09.png)
+
 #### Settings
 
 The settings page has several card sections that can modify the settings/behavior of PiFire.  
@@ -95,8 +116,6 @@ The profile editor allows you to modify the existing probe profiles or add your 
 When adding a new profile, these are the configurable settings:
 
 * _Name_ - More free-form text field for the human readable name. I've chosen to put dashes between words, but it's probably not necessary.
-* _Vs_ - This is the voltage of the source.  Because we're dealing with calculating temperature, precision is important.  Thus, just using 3.3V for the source voltage could throw off the resistor divider calculations, given you a different calculated resistance across the probe.  This could lead to inaccurate temperature readings.  It is highly recommended to use a multimeter to measure the voltage source on the 3.3V rail.  For the defaults in PiFire, I've used 3.28V which is what I measure on my build.  
-* _Rd_ - This is the value of your R1 resistor in Ohms in the resistor divider circuit.  As mentioned in the hardware parts list, you should try to get a resistor that has good tolerance to ensure accuracy.  However, if you have resistors that might slightly off, you can modify the value here.  In addition, if you plan to use RTD type probes with a nominal 1k resistance paired with 1k resistors in the resistor divider, then modify this setting here.  You may want to name the profile appropriately if you change this value.    
 * _Coefficient's A,B,C_ - These are the coefficient values that are used in the Steinhart-Hart equation which will determine the temperature based off of the resistance of the probe determined above.  This equation is regarded as the best mathematical expression for the resistance - temperature relationship of thermistors.  More information about Steinhart Hart can be found in the [Wikipedia](https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation) article.  Coefficients can be derived by measuring the resistance of your probe across the operating range of temperature points.  Once you have that data, there are online calculators that can produce the coefficients for you. I used [this](https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html) calculator to determine coefficients for my RTD probe.  Or, as mentioned before, you can lift these coefficients from other projects like [HeaterMeter](https://github.com/CapnBry/HeaterMeter) or [this project by Skyeperry](https://github.com/skyeperry1/Maverick-ET-73-Meat-Probe-Arduino-Library) on GitHub.   
 
 ```tip
@@ -247,9 +266,23 @@ If debug mode is enabled, debug information will be included in the event histor
 
 #### Admin Settings
 
-In the admin settings page, you can set global settings that will configure the system.  These include turning on debug mode, enabling manual mode.  
+In the admin settings page, you can set global settings that will configure the system.  
+
+##### Debug Options 
+
+The first section is Debug Options, which provides various options that can be used for debug.  
 
 ![Admin](/img/webui/PiFire-Admin-00.png)
+
+- _Debug Mode_ - This mode enables more debug information to be output to the various logs, including event.log and control.log.  It may be possible that enabling this will impact performance 
+
+- _Manual Control_ - This mode will allow you to manually control the outputs of the system, such as the Power, Igniter, Auger and Fan.  For PWM/DC Fan systems, you can also control the duty cycle.  ![Admin](/img/webui/PiFire-Admin-10.png)
+
+- _Logs_ - Download a zipped version of the server logs currently available, Delete all logs (may be useful if your logs are quite large), and a link to the log viewer.  
+
+- _Download Debug Data_ - This is a simple way from the WebUI to download the settings.json and the control database from the system without having to log via SSH. 
+
+##### Data Management
 
 The Data Management card allows you to manage your PiFire data.  Here you can backup and restore your settings (including probes/probe profiles) and Pellet Database (including the logs).  You can also choose to delete data for history, events, pellets.  You can reset all settings, logs and databases by selecting Reset to Factory Settings.  
 
@@ -259,15 +292,33 @@ Resetting to factory settings will remove any settings you had for modules and m
 
 ![Admin](/img/webui/PiFire-Admin-02.png)
 
-Scrolling down further gives you the option to reboot the system or shutdown the system.  
-
-![Admin](/img/webui/PiFire-Admin-04.png)
-
-Newly added is a QR code feature to display the QR code for the IP address of PiFire.  You can use this to share with others in your household, or configure the Android application.
+Next is a link to the Configuration Wizard where you can change your system configuration including the system board type, probe devices / probes, display & input, and distance/pellet sensors.  
 
 ![Admin](/img/webui/PiFire-Admin-03.png)
 
-Below these controls, you'll see more information about the system hardware, system temperature, uptime, GPIO Pins, etc.  
+Scrolling down further gives you the option to restart the server(without reboot), reboot the system or shutdown the system.  
+
+![Admin](/img/webui/PiFire-Admin-04.png)
+
+Next is a Boot Configuration Settings, where you can opt to boot directly into Monitor mode, for those that would prefer to see their display light up and their WebUI to show temperatures at startup.  
+
+![Admin](/img/webui/PiFire-Admin-05.png)
+
+Next is the System Info tab, which provides you with information about uptime, wifi, system health, etc. 
+
+![Admin](/img/webui/PiFire-Admin-06.png)
+
+The next section gives you a summary of the configured GPIOs for both Input/Outputs and for connected devices (i.e. displays). 
+
+![Admin](/img/webui/PiFire-Admin-07.png)
+
+The Modules section, provides you a brief list of the modules that are currently loaded on the system.  
+
+![Admin](/img/webui/PiFire-Admin-08.png)
+
+Finally, the PiFire Info section provides helpful links to documentation and resources as well as a QR Code for the system which can be used to link your PiFire with the Android Application.  
+
+![Admin](/img/webui/PiFire-Admin-09.png)
 
 ## Physical Interface (Display w/Buttons)
 

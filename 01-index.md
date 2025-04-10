@@ -40,16 +40,17 @@ What I did keep from dborello's project was the PID controller which was the hea
 * Multiple Cook Modes
 	* _Startup Mode_ (fixed auger on times with igniter on)
 	* _Smoke Mode_ (fixed auger on times)
-	* _Hold Mode_ (variable auger on times) using PID for higher accuracy
+	* _Hold Mode_ (variable auger on times) using PID for higher accuracy (multiple PID / Controller options)
 	* _Shutdown Mode_ (auger off, fan on) to burn off pellets after cook is completed
 	* _Monitor Mode_ - See temperatures of grill / probes and get notifications if using another controller or if just checking the temperatures any time.  
 	* _Manual Mode_ - Control fan, auger and igniter manually.  
 	* _Prime_ - Allows you to prime the firepot with pellets prior to a cook.  
 * Supports several different OLED and LCD screens
 	* SSD1306 OLED Display
-	* ST7789 TFT Display
+	* ST7789 TFT Display (240x240 resolution supported, ST7789V experimentally supported)
 	* ILI9341 TFT Display (320x240 resolution only)
-	* DSI Touch Display (**Currently Experimental**) - Requires Raspberry Pi with DSI interface (non-Pi Zero) and is resource heavy, so Pi 3B+ or later recommended 
+	* ILI9488 TFT Display (480x320 resolution)
+	* DSI Touch Display - Requires Raspberry Pi with DSI interface (non-Pi Zero) and is resource heavy, so Pi 3B+ or later recommended
 * Physical Button Input / Control (depending on the display, three button inputs)
 * Encoder support for, so you can control your grill with a spinny knob.
 * One (1) Grill Probe and Many Food Probes
@@ -58,6 +59,7 @@ What I did keep from dborello's project was the PID controller which was the hea
 	* Probe tuning tool to help develop probe profiles
 	* Any number of probe inputs, limited only by the number of devices that the Raspberry Pi can support
 	* Virtual Probes to allow you to do things like averaging probes, finding highest and lowest values of certain probes, etc.
+	* Inkbird iBBQ and Meater/Meater+ Bluetooth probe support added in v1.9.0!
 * Cook Timer - Moved to the Top Bar for Easy Access
 * Notifications (Grill / Food Probes / Timer)
 	* Supports Apprise, IFTTT, Pushover, and Pushbullet Notification Services and now MQTT!
@@ -77,7 +79,7 @@ What I did keep from dborello's project was the PID controller which was the hea
 
 The dashboard is where most of your key information and controls are at.  This is the screen that greets you when you access the PiFire WebUI on your computer, smart phone or tablet in a browser.
 
-![Dashboard](img/webui/PiFire-Dashboard-00.png)
+![Dashboard](img/webui/PiFire-Dashboard-01.png)
 
 For those of us who like to see the data, PiFire allows you to graph and save your cook history.  It's also a great way to monitor your cook in realtime.  
 
@@ -118,7 +120,7 @@ I've added a discord server [here](https://discord.gg/F9mbCrbrZS) which can be a
 
 ### Credits
 
-Web Application created by Ben Parmeter, copyright 2020-2023. Check out my other projects on [github](https://github.com/nebhead). If you enjoy this software and feel the need to donate a cup of coffee, a frosty beer or a bottle of wine to the developer you can click [here](https://paypal.me/benparmeter).
+Web Application created by Ben Parmeter, copyright 2020-2025. Check out my other projects on [github](https://github.com/nebhead). If you enjoy this software and feel the need to donate a cup of coffee, a frosty beer or a bottle of wine to the developer you can click [here](https://paypal.me/benparmeter).
 
 Of course, none of this project would be available without the wonderful and amazing folks below.  If I forgot anyone please don't hesitate to let me know.  
 
@@ -155,7 +157,7 @@ This project is licensed under the MIT license.
 ```
 MIT License
 
-Copyright (c) 2020 - 2024 Ben Parmeter and Contributors
+Copyright (c) 2020 - 2025 Ben Parmeter and Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
