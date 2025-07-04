@@ -286,6 +286,12 @@ System must already be in Manual mode (see set/mode command)
 ```
 True = On, False = Off
 
+###### Set Units 
+```info
+/api/set/units/{F/C}
+```
+Set the global units to F (Fahrenheit) or C (Celsius)
+
 ##### CMD Commands
 
 ###### Restart Scripts/Server 
