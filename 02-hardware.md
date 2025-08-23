@@ -5,7 +5,13 @@ sort: 2
 ---
 ## Hardware Configuration
 
-In this section, we'll describe out to get your PiFire system built out in hardware. 
+In this section, we'll describe out to get your PiFire system built out in hardware.
+
+### I Have a ___ Grill, Will it Work With PiFire? 
+
+Well, odds are, if you have an older Traeger or similar clone with all AC components (Auger, Fan, Igniter) and PT1000 temperature probe then PiFire could drop right in and work.  If your grill is newer and has DC components, the answer is a little more nuanced.  However, that doesn't always mean that you are out of luck.  Generally speaking you may be able to swap out certain components like the fan or igniter for off the shelf AC components that may work.  It will just be a tiny bit more cost and effort. 
+
+Check out this Google spreadsheet [here](https://docs.google.com/spreadsheets/d/1olvY29UPNfBbu29fcXYihE-I8F14vRyDMEGAc8kuGWo/edit?usp=sharing) to see if your grill has been known to work with PiFire before.  **NOTE:** *This is a publicly editable spreadsheet, so please don't delete any data from it.*
 
 ### Getting Started
 
