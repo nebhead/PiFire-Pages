@@ -42,6 +42,10 @@ With the updates to the Raspberry Pi Imager, you can quickly and easily configur
 
 #### PiFire OS Option
 
+```note
+NOTE: The PiFire OS image has not been updated in some time, and is not currently recommended.
+```
+
 Github user @calonmerc has created a PiFire OS image that can be flashed and used without the below installation necessary. Just flash, boot, configure and go!  
 
 Start [here](https://github.com/calonmerc/PiFireOS) for the image download and detailed instructions on how to flash and get up and running.  *Many thanks to @calonmerc for his ongoing contributions to the project!* 

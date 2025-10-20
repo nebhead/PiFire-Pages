@@ -5,7 +5,13 @@ sort: 2
 ---
 ## Hardware Configuration
 
-In this section, we'll describe out to get your PiFire system built out in hardware. 
+In this section, we'll describe out to get your PiFire system built out in hardware.
+
+### I Have a ___ Grill, Will it Work With PiFire? 
+
+Well, odds are, if you have an older Traeger or similar clone with all AC components (Auger, Fan, Igniter) and PT1000 temperature probe then PiFire could drop right in and work.  If your grill is newer and has DC components, the answer is a little more nuanced.  However, that doesn't always mean that you are out of luck.  Generally speaking you may be able to swap out certain components like the fan or igniter for off the shelf AC components that may work.  It will just be a tiny bit more cost and effort. 
+
+Check out this Google spreadsheet [here](https://docs.google.com/spreadsheets/d/1olvY29UPNfBbu29fcXYihE-I8F14vRyDMEGAc8kuGWo/edit?usp=sharing) to see if your grill has been known to work with PiFire before.  **NOTE:** *This is a publicly editable spreadsheet, so please don't delete any data from it.*
 
 ### Getting Started
 
@@ -147,6 +153,8 @@ ___Pins Assigned for Button Input on the v4.x.x Board___
 
 [See Button/Encoder header pinout above...](#pcb-4xx-pinout)
 
+Popular switches for projects which can be obtained almost anywhere very cheaply. Here is an [Amazon Link](https://www.amazon.com/gp/product/B071KX71SV).  
+
 ```note
 [@weberbox](https://github.com/weberbox) has also created a very useful button board that can be used to simplify the button input.  Note that this board is designed with active HIGH inputs and should be configured HIGH in your modules setup.
 
@@ -177,6 +185,47 @@ PiFire supports a few options for distance sensors to detect pellet levels in th
 
 * **HCSR04** - Ultrasonic Sensor with GPIO interface.  This sensor hasn't been tested, but the module support is provided for potential use/testing if desired. These sensors are cheap and ubiquitous.  
   * [Amazon Link](https://www.amazon.com/HC-SR04-Ranging-Detector-Ultrasonic-Distance/dp/B01GNEHJNC)
+
+### Other Parts and Tools
+Some other parts and tools that you may need for your build: 
+
+* **Micro SD Card** - 4GB or greater is required for Raspberry Pi OS Bullseye and later.
+* **120V AC to 5VDC Power Supply** - Generally speaking, getting a power supply with higher capacity (amperage) is recommended.  For the standard build, a 5V 5A should work well. Power supply should be connected to the 5V input on the PiFire PCB (4.x.x).  Do not connect the Raspberry Pi USB power input at the same time that this is connected.  
+  * [Amazon Link](https://www.amazon.com/gp/product/B07B111B7Y)
+* **120V AC to 5/12VDC Power Supply** - If you are implementing the DC fan version of the build, you'll want to get something that can output both 12V DC and 5V DC and has good headroom for amperage.  Power supply should be connected to the 5V and 12V input on the PiFire PCB (4.x.x).  Do not connect the Raspberry Pi USB power input at the same time that this is connected.  
+  * [Amazon Link](https://www.amazon.com/dp/B06WD3W8L1)
+* **Molex Connectors** - To make life easier when plugging in standard components from your existing smoker, these connectors should make things easier. This basically allows you to easily plug into the existing connections on the smoker.  I would highly recommend purchasing a ratcheting wire crimping tool, and watch some youtube videos to understand how these connectors work.  Careful not to trim too much off of the leads so that they do not slide through the connector.
+  * [Amazon Link](https://www.amazon.com/gp/product/B074G5PQHL)
+* **2.5mm Mono Audio Jack** - I have finally found some very high quality 2.5mm jacks which can be found on ebay, Amazon and other Chinese electronics sites.  These Philmore style jacks in either stereo or mono are excellent and very reliable.  The catch is that they can be quite expensive. Up to \$8 each in some cases.  However, I feel this is worth the price compared to the cheap surface mount options out there.  I have found that there are often better deals for these on ebay and Aliexpress.  Search for Philmore.  I recently picked up 10 mono versions of these jacks from ebay for \$20 and they work really well.  
+  * [Amazon Link](https://www.amazon.com/gp/product/B01M2AZTUQ)  
+* **RTD1000 Traeger Temp Probe** - For most builds, you may have an existing PT1000 temperature probe for the grill temperature.  However if you are looking to replace it, then you will need one of these.  Traeger calls these a PT100, but they are really PT1000 RTD probes where resistance is 1k Ohm at 0C. I'll provide a link to Amazon here, but you can also order much cheaper versions of the same thing on Ebay. 
+  * [Amazon Link](https://www.amazon.com/QuliMetal-Temperature-Replacement-Traeger-Thermostat/dp/B07JYYBVQ7)
+* **JST Connectors** - You will need JST connectors, ribbon cable and a crimping tool.  I'd recommend the following: 
+  * JST Connector Kit: [Amazon](https://www.amazon.com/dp/B07P96JMK5)
+  * JST Connector Kit w/Ratcheting Crimping Tool: [Amazon](https://www.amazon.com/dp/B09X111BK5)
+  * Ribbon Cable: [Amazon](https://www.amazon.com/dp/B0775WHBP5)
+  * Pre-Wired Cable/Wire: [Amazon](https://www.amazon.com/Connector-pre-crimped-Housing-Adapter-Compatible/dp/B08G18PWQ6)
+* **AC Wire** - For wiring up the AC components, it's recommended to have at least 18 Gauge wire (16 Gauge is better) that is insulated and rated for higher temperatures.  I like silicon insulated wire because it's flexible and temperature resistant.  
+  * 18 Gauge: [Amazon](https://www.amazon.com/dp/B073RDBW7L)
+  * 16 Gauge: [Amazon](https://www.amazon.com/Fermerry-Electric-Silicone-Cables-Stranded/dp/B089CPH72F) 
+* **DC Fan Options** - If you plan to build the PWM fan version(s) of PiFire, there are a few known good options out there: 
+  * Noctua NF-F12 iPPC 3000 RPM: Solid high quality PWM with reasonable airflow. [Amazon](https://www.amazon.com/dp/B00KFCRATC)
+  * Bgears b-BlasterPWM 5000 RPM: Very high airflow fan, which you may need to adjust in PiFire to reduce the maximum duty cycle.  Plenty of headroom for adjusting. [Amazon](https://www.amazon.com/dp/B0BNSR9ZGK)
+  * Iceberg Thermal IceGALE Xtra: High airflow fan which may have some cutout at lower duty cycles (less than 20%).  [Amazon](https://www.amazon.com/dp/B08P2CJ18F)
+* **DS18B20** - This probe type is connected to the 1-Wire interface and was primarily included to be an option for a reference probe. However, an astute user pointed out that many of these probe options are limited to 125C/257F which may not be sufficient for referencing/tuning the grill probe.  
+  * DS18B20 Probes: [Amazon](https://www.amazon.com/dp/B00M1PM55K)
+* **MAX31865 RTD Sensor** - SPI based RTD Sensor specifically tuned for the PT1000 probe.  Very reliable, but only provides one sensor input and takes up one of the SPI options.  
+  * [Amazon](https://www.amazon.com/dp/B079FZHVH7)
+  * [Adafruit](https://www.adafruit.com/product/3648) 
+* **ADS1115** - Popular I2C based 16bit Analog to Digital Converter.  Note: Some have reported strange behavior with the ADS1115 module they have ordered from Amazon with this link.  I ordered some additional ones from this link (on the West Coast of the USA) and they tested just fine.  There is some speculation that some vendors are cutting corners and putting the cheaper ADS1015 on the board instead.  If this is the case, you should be covered with the new modules added for the ADS1015 in the wizard.
+  * [Amazon Link](https://www.amazon.com/HiLetgo-Converter-Programmable-Amplifier-Development/dp/B07VPFLSMX)
+* **MCP9600** - K-Type thermocouple sensor board that works over I2C.  This board is not recommended due it's I2C speed limitations.  You may find that you will need to reduce the I2C bus speed to utilize this board reliably. 
+  * [Adafruit](https://www.adafruit.com/product/4101)
+* **Bluetooth Probes** - There are now several Bluetooth probes that are supported by PiFire.  The following have been tested: 
+  * Original Meater: [Amazon](https://www.amazon.com/MEATER-Thermometer-Rotisserie-Bluetooth-Connectivity/dp/B07H8WTFHW) 
+  * Inkbird iBBQ IBT-IBT4XS: [Amazon](https://www.amazon.com/dp/B076QDC5VL)
+  * Inkbird iBBQ IBT-6XS: [Inkbird](https://inkbird.com/products/bluetooth-bbq-thermometer-ibt-6xs)
+* **Other Hardware?** - I may have missed some items here, but check the specific PCB links above for the BOM (linked in the readme for each PCB) for other hardware items.  [PCB Links](#links-to-the-pcbs-in-the-4xx-family-of-pifire-boards)
 
 ### User Builds
 
