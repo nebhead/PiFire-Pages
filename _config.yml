@@ -1,2 +1,14 @@
 remote_theme: clearpathrobotics/jekyll-rtd-theme
 
+plugins:
+  - jekyll-remote-theme
+
+# Site settings
+title: PiFire Documentation
+description: Raspberry Pi Based Smoker Grill Controller
+url: "https://nebhead.github.io"
+baseurl: "/PiFire-Pages"
+
+# GitHub metadata (optional - will be auto-filled in GitHub Actions)
+repository: nebhead/PiFire-Pages
+
