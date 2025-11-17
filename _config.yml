@@ -1,4 +1,4 @@
-remote_theme: clearpathrobotics/jekyll-rtd-theme
+remote_theme: pmarsceill/just-the-docs@v0.10.0
 
 plugins:
   - jekyll-remote-theme
@@ -9,6 +9,13 @@ description: Raspberry Pi Based Smoker Grill Controller
 url: ""
 baseurl: ""
 
-# GitHub metadata (optional - will be auto-filled in GitHub Actions)
+# GitHub metadata
 repository: nebhead/PiFire-Pages
+
+# Just the Docs theme settings
+search_enabled: true
+heading_anchors: true
+
+# Navigation structure
+nav_sort: title
 

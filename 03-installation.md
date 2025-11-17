@@ -1,7 +1,7 @@
 ---
 title: "PiFire Installation"
 permalink: /install
-sort: 3
+nav_order: 3
 ---
 ## Software Installation
 
@@ -17,7 +17,8 @@ $ curl https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/instal
 
 It's recommended to watch the video and follow along with these steps below, to get you up and running quickly.  
 
-```note
+> **📝 Note**
+>
 This install video is for previous versions, but is still generally relevant.
 ```
 
@@ -42,7 +43,8 @@ With the updates to the Raspberry Pi Imager, you can quickly and easily configur
 
 #### PiFire OS Option
 
-```note
+> **📝 Note**
+>
 NOTE: The PiFire OS image has not been updated in some time, and is not currently recommended.
 ```
 
@@ -118,13 +120,15 @@ $ wget https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/instal
 $ bash install.sh
 ```
 
-```note
+> **📝 Note**
+>
 IMPORTANT: Run the script without using SUDO, as the script will automatically obtain the privledges it needs to install.
 ```
 
 Follow the onscreen prompts to complete the installation.  
 
-```note
+> **📝 Note**
+>
 At the end of the script, the system will reboot.  Once the system has rebooted, you can then use your browser to complete the configuration.  
 ```
 
@@ -144,9 +148,9 @@ Once the initial installation script has run, the system will reboot and will be
 At this point you should be able to access the WebUI via a browser on your smart phone, tablet or PC device.  For the configuration step, it's recommended to complete this on your PC or tablet with a little more browser screen size. 
 
 Simply navigate to the IP address of your device for example (you can usually find the IP address of your device from looking at your router's configuration/status pages). My router typically assigns IPs with prefixes of 192.168.10.XXX.  I'll use examples on my home network here, so you'll see URLs like: http://192.168.10.42  Yours may look different depending on your routers firmware/manufacturer (i.e. 10.10.0.XXX, etc.)
-```note
+> **📝 Note**
+>
 **Note:** It's highly recommended to set a static IP for your Pi in your router's configuration.  This will vary from manufacturer to manufacturer and is not covered in this guide.  A static IP ensures that you will be able to access your device reliably, without having to check your router for a new IP every so often.   
-```
 
 #### Welcome to Configuration Wizard 
 
@@ -166,7 +170,8 @@ By default, PiFire uses a Raspberry Pi and the default system type is Raspberry 
 
 For relays, you'll need to select that the trigger level should be used for your specific system.  Depending on the relays that you have selected for your build, you'll want to choose the right trigger level.  
 
-```note
+> **📝 Note**
+>
 Many of the standard mechanical relay modules on the market will be active low.  However for Solid State Relays you may find that there are both active low and active high triggered relays available, so you'll want to make sure you check this and set this accordingly.
 ```
 
@@ -188,7 +193,8 @@ Next you will see the Probe Devices list. By default, PiFire selects the ADS1115
 
 When adding a new device, click the plus icon in this section, then select the device you want to add from the drop-down.  Give your device a unique name, configure any device specific settings and click save.
 
-```note
+> **📝 Note**
+>
 If you are using the ADC1115, it's important to click on the 'edit' button to configure the settings, such as the resistor divider and voltage source settings.  
 ```
 
@@ -223,9 +229,9 @@ Next, select a Probe Profile for this particular probe.  This is mainly utilized
 
 Lastly, select whether the probe should be enabled and visible in the UI.
 
-```note
+> **📝 Note**
+>
 Note that if the probe is an Aux probe it will not be displayed in the UI, regardless of this setting.  
-```
 ##### Virtual Devices
 
 Virtual Devices can be used if you want to take input from multiple probes and perform some kind of math on those devices, which is output to a virtual port.  
@@ -246,7 +252,8 @@ Next go to the Probe Configuration section and add a probe by clicking plus.  In
 
 Then click Save, and you've created a brand new virtual probe!  
 
-```note
+> **📝 Note**
+>
 Ordering of probes in the probe configuration list is very important.  Virtual Probes must come **after** the probes that are being used for input to that probe.  For example, if you have Probe-1 and Probe-2 being used by your Virtual Device / Port, then your Probe-3 using VIRT0, should come after Probe-1 and Probe-2 in the probe configuration list.  PiFire should do this automatically, but it's good to know in case any errors are experienced.
 
 Theoretically, virtual probes can be stacked, meaning if you want to use a virtual probe as input into another virtual probe that should be possible, as long as the inputs from one virtual probe into the other are first in the probe configuration list.  

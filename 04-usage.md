@@ -1,23 +1,24 @@
 ---
 title: "PiFire Usage"
 permalink: /usage
-sort: 4
+nav_order: 4
 ---
 ## Using PiFire
 If you've finished with the installation and configuration, PiFire will be ready to use.  Once the system is up and running, you should be able to access the WebUI via a browser on your smart phone, tablet or PC device.  
 
 It's recommended at least taking a peek at the PiFire overview video below.  It covers the basics of operation, settings and control.  
 
-```note
+> **📝 Note**
+>
 This video is for the previous version and will be updated soon.
 ```
 
 [![YouTube Demo](img/photos/Video-Link-Image-sm.png)](https://youtu.be/zifl0_sfFBA)
 
 If you setup a hostname (ex. pifire.local) when flashing your SD Card, it's likely you can simply access the WebUI by typing [http://pifire.local](http://pifire.local) into your browser.  If that doesn't work for you, simply navigate to the IP address of your device for example (you can usually find the IP address of your device from looking at your router's configuration/status pages). My router typically assigns IPs with prefixes of 192.168.YYY.XXX.  I'll use examples on my home network here, so you'll see URLs like: http://192.168.10.42  Yours may look different depending on your routers firmware/manufacturer (i.e. 10.10.0.XXX, etc.)
-```note
+> **📝 Note**
+>
 **Note:** It's highly recommended to set a static IP for your Pi in your router's configuration.  This will vary from manufacturer to manufacturer and is not covered in this guide.  A static IP ensures that you will be able to access your device reliably, without having to check your router for a new IP every so often.   
-```
 
 #### The Dashboard
 The interface / webui is broken out several pages. The first is the dashboard view where you can check the current status of the grill, and control the modes. Clicking the PiFire logo in the upper left will always take you back to the dashboard from whatever screen you are on.  
@@ -27,7 +28,8 @@ The interface / webui is broken out several pages. The first is the dashboard vi
 
 Pressing/Clicking the menu items at the top of the page or the hamburger icon in the upper right of the interface (if on a small screen), allows you to also access to the other screens.  
 
-```note
+> **📝 Note**
+>
 You will not see temperatures displayed until you are in startup, operation, or monitor mode.  If you have an attached display, the screen will remain black/blank until Pifire is in startup, operation or monitor mode - or if you have interacted with the input(buttons or encoder knob). 
 ```
 
@@ -85,7 +87,8 @@ Example of icon that appears in error conditions:
 
 If you have notifications configured (see Settings), you can setup notifications for different events from the dashboard. Clicking the bell/bell-slash icon will bring up a dialog for you to select notifications for a particular probe.
 
-```note
+> **📝 Note**
+>
 Starting with v1.9.0, you *must* click on the toggle switch beside the particular notification type in the dialog box to enable that notification.  
 ```
 
@@ -358,7 +361,8 @@ If you select Hold, you can then select a temperature by pressing <kbd>Up</kbd> 
 
 ![Menu Hold-Temp](/img/display/PiFire-Display-09.png)
 
-```note
+> **📝 Note**
+>
 If you do not press `Enter` after selecting a temperature, the set point will not be selected. 
 ```
 

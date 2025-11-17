@@ -1,13 +1,14 @@
 ---
 title: "Cookfile Format"
 permalink: /cookfile
-sort: 8
+nav_order: 8
 ---
 ### Cookfile Format v1.5.0
 
 Introduced with v1.3.5 of PiFire, the cookfile format saves information about a cook from start to finish.  The file includes metadata, history data, labels, events, comments, and assets (images).  This page will provide the technical details, such that others can utilize the same formatting in their software.  I'm providing this specification and making it freely available so that anyone can adopt it for their project or production product.  
 
-```danger
+> **⚠️ Warning**
+>
 This specification, and contents are currently under development and may be updated periodically to improve accuracy and information.  
 ```
 
@@ -190,7 +191,8 @@ Each of these modes would have a block with metrics like the above.  The metrics
 
 #### Graph Labels
 
-```note
+> **📝 Note**
+>
 This file is not currently being utilized in the latest version of PiFire and may be depricated or merged into the graph_data.json file.  
 ```
 
@@ -226,7 +228,8 @@ These files contain information to help reconstruct a graph of the cook, using d
 
 The below is an abbreviated version of the file.   
 
-```note
+> **📝 Note**
+>
 
 Removed due to an issue with Jekyll. 
 
@@ -366,7 +369,8 @@ The assets file stores pointers to all of the asset (image) files in the assets 
 
 Others notes about assets/media stored in the file.  
 
-```note
+> **📝 Note**
+>
 Image files added to the cookfile are rotated, resized (800x600 maximum size) and converted to JPEG format by PiFire automatically.  When images are added to PiFire, they will automatically have a 128x128 thumbnail created, and added to the '/assets/thumbnails/' folder with a corresponding name.
 ```
 

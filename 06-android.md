@@ -1,7 +1,7 @@
 ---
 title: "PiFire on Android"
 permalink: /android
-sort: 6
+nav_order: 6
 ---
 ## Adding the Web App to your Homescreen using Chrome on your Android Phone
 

@@ -1,7 +1,7 @@
 ---
 title: "Appendix A - Legacy Hardware"
 permalink: /appendix-a
-sort: 10
+nav_order: 10
 ---
 ## Legacy Hardware Configuration
 
@@ -73,7 +73,8 @@ There are now two design choices, with expanded support for displays as well.  T
 Example of basic PiFire wiring (PiSide) with SSD1306 OLED I2C based display.  
 ![Raspberry Pi Wiring w/I2C Display](/img/PiFire-PiSide-Schematic.png)
 
-```note
+> **📝 Note**
+>
 If you are using a PT1000 (or Traeger PT100) RTD Probe, it has been pointed out (by Discord user James Cantrell) that using a 1k Ohm resistor would be a much better choice for that input channel instead of the 10k Ohm resistor.  Since PT1000 probes are 1k Ohm at 0 degrees Celsius, this smaller 1k Ohm resistor divider is much more suited to give a wider range of voltage readings into the ADC.  In future hardware designs, this should be something that is taken into consideration.  
 
 If you choose to change this to a 1k ohm resistor, you must remember to change the Rd value (Resistor Divider) in the Probe Profile that you are using.
@@ -81,7 +82,8 @@ If you choose to change this to a 1k ohm resistor, you must remember to change t
 It should also be noted that there are some food probes out there that use a similar PT1000 profile/resistor (i.e. Pit Boss).  If you plan to use these types of probes, consider modifying the design for those channels to utilize 1k instead of 10k ohm resistor dividers.  
 ```
 
-```note
+> **📝 Note**
+>
 There have been questions around the optional switch attached to GPIO17.  This is only used in configurations where you are using both the original controller and the PiFire controller on the same grill.  If you selected standalone during the wizard configuration, then this switch is ignored.  If you selected OEM Controller Present in the wizard configuration, then this switch will control whether PiFire is actively controlling the grill, or the OEM controller is controlling the grill.  This could potentially used to switch between the controllers on the fly, but is generally not recommended.  
 ```
 
@@ -100,7 +102,8 @@ _Figure A: PiFire w/Existing Controller_
 _Figure B: PiFire Standalone_
 ![Relay & Power Wiring Standalone](/img/PiFire-StandAlone-Relay-Schematic.jpg)
 
-```note
+> **📝 Note**
+>
 In the above figures A&B, the 5V DC Power Supply is show with Neutral and Hot(L) inputs.  AC power should not be connected to the DC outputs of this power supply, or it may experience damage. 
 ```
 
@@ -197,7 +200,8 @@ With a food probe attached:
 
 ![HW Enclosure & Display](/img/photos/HW-NEW-04.jpg)
 
-```note
+> **📝 Note**
+>
 If you're interested in seeing more builds from other users, we have a discussions thread [here](https://github.com/nebhead/PiFire/discussions/28) where others have posted pictures of their unique builds.  In addition to the discussions thread above, the [discord server](https://discord.gg/F9mbCrbrZS) is a great place to see and share build photos and experiences. 
 ```
 
@@ -240,7 +244,8 @@ STLs for this design can be found on Thingiverse here:
 
 #### Older Implementation
 
-```note
+> **📝 Note**
+>
 This section is provided for historical purposes. The design has evolved since the first iteration and this version is no longer being used.  However, it might be useful to someone who is using PiFire alongside their existing controller or doesn't have a 3D printer at their disposal.  
 ```
 
