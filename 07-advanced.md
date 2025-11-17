@@ -274,9 +274,9 @@ Shutdown True = Grill will shutdown when timer expires
 Keep Warm True = Grill will go to Hold Mode (keep warm temperature specified in settings) when timer expires. 
 
 ###### Manual Control
-```warning
-System must already be in Manual mode (see set/mode command)
-```
+{: .warning }
+> System must already be in Manual mode (see set/mode command)
+
 ```url
 /api/set/manual/power/{true/false}
 /api/set/manual/igniter/{true/false}

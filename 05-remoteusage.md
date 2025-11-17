@@ -3,9 +3,8 @@ title: "PiFire Remote Usage"
 permalink: /remote
 nav_order: 5
 ---
-> **⚠️ Warning**
->
-> ## Additional Notes on Accessing the Application from Outside your Local Network
+{: .warning-title }
+> Additional Notes on Accessing the Application from Outside your Local Network
 >
 > Please take the utmost care in considering options for exposing this application outside of your home network. Given that this application has very limited security built-in, anyone that is able to gain access to it directly or indirectly, may be able to control your hardware which could result in damage to your property or even potentially physical harm to someone nearby.  
 >

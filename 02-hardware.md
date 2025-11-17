@@ -91,19 +91,15 @@ ___Relay and PWM Fan Headers___ - _If you are not using the DC Fan, then only th
 
 ___Auxiliary SPI Header___ - _If you are already using the display SPI header, this can be used for another SPI based device such as the MAX38165 RTD probe device._
 
-> **📝 Note**
->
-You must bridge solder jumpers on the back the board to select Chip Enable 0, Chip Enable 1 or GPIO6 (CE0/CE1/GPIO6) and 3.3V or 5V.  Do not bridge both 3.3V and 5V or CE0 and CE1 at the same time or you may damage your system.
-```
+{: .note }
+> You must bridge solder jumpers on the back the board to select Chip Enable 0, Chip Enable 1 or GPIO6 (CE0/CE1/GPIO6) and 3.3V or 5V.  Do not bridge both 3.3V and 5V or CE0 and CE1 at the same time or you may damage your system.
 
 ![PCB 4.x.x Pinout Auxiliary SPI](/img/PiFire-PCB-v4-Pinout-SPI-AUX.jpg)
 
 ___Display SPI Header___ - _If you are using a SPI based display like the ILI9341, then this header should match the pinout for that display._
 
-> **📝 Note**
->
-You must bridge solder jumpers on the back the board to select Chip Enable 0 or 1 (CE0/CE1) and 3.3V or 5V.  Do not bridge both 3.3V and 5V or CE0 and CE1 at the same time or you may damage your system.
-```
+{: .note }
+> You must bridge solder jumpers on the back the board to select Chip Enable 0 or 1 (CE0/CE1) and 3.3V or 5V.  Do not bridge both 3.3V and 5V or CE0 and CE1 at the same time or you may damage your system.
 
 ![PCB 4.x.x Pinout Display SPI](/img/PiFire-PCB-v4-Pinout-SPI-Display.jpg)
 
@@ -157,12 +153,10 @@ ___Pins Assigned for Button Input on the v4.x.x Board___
 
 Popular switches for projects which can be obtained almost anywhere very cheaply. Here is an [Amazon Link](https://www.amazon.com/gp/product/B071KX71SV).  
 
-> **📝 Note**
->
-[@weberbox](https://github.com/weberbox) has also created a very useful button board that can be used to simplify the button input.  Note that this board is designed with active HIGH inputs and should be configured HIGH in your modules setup.
+{: .note }
+> [@weberbox](https://github.com/weberbox) has also created a very useful button board that can be used to simplify the button input.  Note that this board is designed with active HIGH inputs and should be configured HIGH in your modules setup.
+> * EasyEda Button PCB: [https://easyeda.com/zipster85/pifire-buttons](https://easyeda.com/zipster85/pifire-buttons)
 
-* EasyEda Button PCB: [https://easyeda.com/zipster85/pifire-buttons](https://easyeda.com/zipster85/pifire-buttons)
-```
 
 #### Rotary Encoder Input
 

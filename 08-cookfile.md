@@ -7,10 +7,8 @@ nav_order: 8
 
 Introduced with v1.3.5 of PiFire, the cookfile format saves information about a cook from start to finish.  The file includes metadata, history data, labels, events, comments, and assets (images).  This page will provide the technical details, such that others can utilize the same formatting in their software.  I'm providing this specification and making it freely available so that anyone can adopt it for their project or production product.  
 
-> **⚠️ Warning**
->
-This specification, and contents are currently under development and may be updated periodically to improve accuracy and information.  
-```
+{: .warning }
+> This specification, and contents are currently under development and may be updated periodically to improve accuracy and information.  
 
 #### New with v1.5.0
 
@@ -191,10 +189,8 @@ Each of these modes would have a block with metrics like the above.  The metrics
 
 #### Graph Labels
 
-> **📝 Note**
->
-This file is not currently being utilized in the latest version of PiFire and may be depricated or merged into the graph_data.json file.  
-```
+{: .note }
+> This file is not currently being utilized in the latest version of PiFire and may be depricated or merged into the graph_data.json file.  
 
 The graph_labels file provides a mapping of probe names to the probe labels for the data.  The below is an example of how this is formatted:
 
@@ -228,12 +224,8 @@ These files contain information to help reconstruct a graph of the cook, using d
 
 The below is an abbreviated version of the file.   
 
-> **📝 Note**
->
-
-Removed due to an issue with Jekyll. 
-
-```
+{: .note }
+> Removed due to an issue with Jekyll. 
 
 There are three sections to the graph_data.json structure: 
 1. 'chart_data' : This section contains the chart data for each of the probes, setpoint for the primary probe, and notification targets for all probes formatted for chartjs.  This section can be directly plugged into the 'datasets' portion of the chartjs object. [More information can be found here in the Chartjs documentation.](https://www.chartjs.org/docs/latest/charts/line.html)
@@ -369,10 +361,8 @@ The assets file stores pointers to all of the asset (image) files in the assets 
 
 Others notes about assets/media stored in the file.  
 
-> **📝 Note**
->
-Image files added to the cookfile are rotated, resized (800x600 maximum size) and converted to JPEG format by PiFire automatically.  When images are added to PiFire, they will automatically have a 128x128 thumbnail created, and added to the '/assets/thumbnails/' folder with a corresponding name.
-```
+{: .note }
+> Image files added to the cookfile are rotated, resized (800x600 maximum size) and converted to JPEG format by PiFire automatically.  When images are added to PiFire, they will automatically have a 128x128 thumbnail created, and added to the '/assets/thumbnails/' folder with a corresponding name.
 
 #### Licensing
 

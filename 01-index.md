@@ -6,12 +6,10 @@ nav_order: 1
 # ![PiFireIcon](/img/launcher-icon-1x.png) PiFire
 ## Raspberry Pi Based Smoker Grill Controller 
 
-> **⚠️ Warning**
->
+{: .warning }
 > The creator of this project takes no responsibility for any damage that you may do to your personal property including modifications to your smoker grill if you choose to use this project.  The creator also takes no responsibility for any resulting harm or damages that may come from issues with the hardware or software design.*  ***This project is provided for educational purposes, and should be attempted only by individuals who wish to assume all risks involved.***
 
-> **📝 Note**
->
+{: .note }
 > This project is continuously evolving, and thus this readme will likely be improved over time, as I find the inspiration to make adjustments.  That being said, I'm sure there will be many errors that I have overlooked or sections that I haven't updated. This project is something I've done for both fun and for self-education.  If you decide to implement this project for yourself, and run into issues/challenges, feel free to submit an issue here on GitHub.  However, I would highly encourage you to dig in and debug the issue as much as you can on your own for the sake of growing your own knowledge.  Also, I have a very demanding day job, a family, and lots of barbeque to make - so please have patience with me.*
 
 ### Introduction
@@ -19,8 +17,7 @@ This project was inspired by user dborello and his excellent PiSmoker project ([
 
 Just as with the PiSmoker project, I had a few goals in mind.  I also wanted to have tighter temperature controls, wireless control, and plotting of the grill / meat temperatures.  In addition, I wanted to design this project such that original smoker controller could be used if needed.  This way, if I wanted to, I could use my controller as a monitoring device for temperatures instead of controlling the temperature and leave that up to the original controller.  Basically, it was my fallback plan in case my project didn't work out, or if I wanted to do a quick cook on the Traeger without using the fancy GUI.  
 
-> **📝 Note**
->
+{: .note }
 > **UPDATE (11/2021)** After spending lots of time with PiFire, I've finally removed the original controller in favor of using PiFire exclusivesly.  However, this doesn't mean that you can't still retain your original controller if you want.  Both modes work fine. 
 
 I made some other choices that diverged from the PiSmoker project as well.  

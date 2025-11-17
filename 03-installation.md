@@ -10,17 +10,15 @@ nav_order: 3
 It's recommended that you read through the documentation below, or watch the setup video. But if you want to just jump right in, then run the below command on your Raspberry Pi to get started.  
 
 ```bash
-$ curl https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.sh | bash
+curl https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.sh | bash
 ```
 
 ### Basic Installation Video
 
 It's recommended to watch the video and follow along with these steps below, to get you up and running quickly.  
 
-> **📝 Note**
->
-This install video is for previous versions, but is still generally relevant.
-```
+{: .note }
+> This install video is for previous versions, but is still generally relevant.
 
 [![YouTube Demo](img\photos\pifire-video-image-sm.jpg)](https://youtu.be/Bena9Yq00VM)
 
@@ -43,10 +41,8 @@ With the updates to the Raspberry Pi Imager, you can quickly and easily configur
 
 #### PiFire OS Option
 
-> **📝 Note**
->
-NOTE: The PiFire OS image has not been updated in some time, and is not currently recommended.
-```
+{: .note }
+> The PiFire OS image has not been updated in some time, and is not currently recommended.
 
 Github user @calonmerc has created a PiFire OS image that can be flashed and used without the below installation necessary. Just flash, boot, configure and go!  
 
@@ -78,7 +74,7 @@ network={
 Now you can power-up your Raspberry Pi with your microSD card inserted, and connect to it via SSH.  If you're on a Linux PC, use the command line connect to your Pi.
 
 ```bash
-$ ssh pi@192.168.10.xxx
+ssh pi@192.168.10.xxx
 ```
 
 If you're on a Windows PC, you can use Putty to SSH to your Pi, or you can install the Windows Subsystem for Linux and install a Linux image like Ubuntu to run the above command.  
@@ -86,7 +82,7 @@ If you're on a Windows PC, you can use Putty to SSH to your Pi, or you can insta
 Once connected, you'll want to run raspi-config to get the system setup.  
 
 ```bash
-$ sudo raspi-config
+sudo raspi-config
 ```
 
 Once raspi-config is open, the following should be configured at a minimum.
@@ -110,35 +106,32 @@ An automatic installation script has been provided to setup PiFire on freshly fl
 After you've done the above steps to configure your Raspberry Pi, at the command line type the following (without the `$`):
 
 ```bash
-$ curl https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.sh | bash
+curl https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.sh | bash
 ```
 
 OR you may find that it is more reliable to download the script to your raspberry pi first, and execute directly.
 
 ```bash
-$ wget https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.sh
-$ bash install.sh
+wget https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.sh
+bash install.sh
 ```
 
-> **📝 Note**
->
-IMPORTANT: Run the script without using SUDO, as the script will automatically obtain the privledges it needs to install.
-```
+{: .note }
+> IMPORTANT: Run the script without using SUDO, as the script will automatically obtain the privledges it needs to install.
+
 
 Follow the onscreen prompts to complete the installation.  
 
-> **📝 Note**
->
-At the end of the script, the system will reboot.  Once the system has rebooted, you can then use your browser to complete the configuration.  
-```
+{: .note }
+> At the end of the script, the system will reboot.  Once the system has rebooted, you can then use your browser to complete the configuration.  
 
 #### Development Branch Installation Method
 
 For the more adventurous of you, you can install the development branch directly.  Note that by doing this, you may experience all of the risks inherent in bleeding edge, untested software.  Feedback on your experience with the development branch is always welcome.   
 
 ```bash
-$ wget https://raw.githubusercontent.com/nebhead/pifire/development/auto-install/install.sh
-$ bash install.sh -dev
+wget https://raw.githubusercontent.com/nebhead/pifire/development/auto-install/install.sh
+bash install.sh -dev
 ```
 
 ### PiFire Configuration Wizard
@@ -148,9 +141,9 @@ Once the initial installation script has run, the system will reboot and will be
 At this point you should be able to access the WebUI via a browser on your smart phone, tablet or PC device.  For the configuration step, it's recommended to complete this on your PC or tablet with a little more browser screen size. 
 
 Simply navigate to the IP address of your device for example (you can usually find the IP address of your device from looking at your router's configuration/status pages). My router typically assigns IPs with prefixes of 192.168.10.XXX.  I'll use examples on my home network here, so you'll see URLs like: http://192.168.10.42  Yours may look different depending on your routers firmware/manufacturer (i.e. 10.10.0.XXX, etc.)
-> **📝 Note**
->
-**Note:** It's highly recommended to set a static IP for your Pi in your router's configuration.  This will vary from manufacturer to manufacturer and is not covered in this guide.  A static IP ensures that you will be able to access your device reliably, without having to check your router for a new IP every so often.   
+
+{: .note }
+> It's highly recommended to set a static IP for your Pi in your router's configuration.  This will vary from manufacturer to manufacturer and is not covered in this guide.  A static IP ensures that you will be able to access your device reliably, without having to check your router for a new IP every so often.   
 
 #### Welcome to Configuration Wizard 
 
@@ -170,10 +163,8 @@ By default, PiFire uses a Raspberry Pi and the default system type is Raspberry 
 
 For relays, you'll need to select that the trigger level should be used for your specific system.  Depending on the relays that you have selected for your build, you'll want to choose the right trigger level.  
 
-> **📝 Note**
->
-Many of the standard mechanical relay modules on the market will be active low.  However for Solid State Relays you may find that there are both active low and active high triggered relays available, so you'll want to make sure you check this and set this accordingly.
-```
+{: .note }
+> Many of the standard mechanical relay modules on the market will be active low.  However for Solid State Relays you may find that there are both active low and active high triggered relays available, so you'll want to make sure you check this and set this accordingly.
 
 On some PCB's, you may be able to select whether you have a DC (PWM) or AC Fan.  
 
@@ -193,10 +184,8 @@ Next you will see the Probe Devices list. By default, PiFire selects the ADS1115
 
 When adding a new device, click the plus icon in this section, then select the device you want to add from the drop-down.  Give your device a unique name, configure any device specific settings and click save.
 
-> **📝 Note**
->
-If you are using the ADC1115, it's important to click on the 'edit' button to configure the settings, such as the resistor divider and voltage source settings.  
-```
+{: .note }
+> If you are using the ADC1115, it's important to click on the 'edit' button to configure the settings, such as the resistor divider and voltage source settings.  
 
 ![Wizard Probe Device Settings](img/webui/Wizard-02-Probes-Device-Settings.jpg)
 
@@ -229,9 +218,9 @@ Next, select a Probe Profile for this particular probe.  This is mainly utilized
 
 Lastly, select whether the probe should be enabled and visible in the UI.
 
-> **📝 Note**
->
-Note that if the probe is an Aux probe it will not be displayed in the UI, regardless of this setting.  
+{: .note }
+> Note that if the probe is an Aux probe it will not be displayed in the UI, regardless of this setting.  
+
 ##### Virtual Devices
 
 Virtual Devices can be used if you want to take input from multiple probes and perform some kind of math on those devices, which is output to a virtual port.  
@@ -252,12 +241,10 @@ Next go to the Probe Configuration section and add a probe by clicking plus.  In
 
 Then click Save, and you've created a brand new virtual probe!  
 
-> **📝 Note**
+{: .note }
+> Ordering of probes in the probe configuration list is very important.  Virtual Probes must come **after** the probes that are being used for input to that probe.  For example, if you have Probe-1 and Probe-2 being used by your Virtual Device / Port, then your Probe-3 using VIRT0, should come after Probe-1 and Probe-2 in the probe configuration list.  PiFire should do this automatically, but it's good to know in case any errors are experienced.
 >
-Ordering of probes in the probe configuration list is very important.  Virtual Probes must come **after** the probes that are being used for input to that probe.  For example, if you have Probe-1 and Probe-2 being used by your Virtual Device / Port, then your Probe-3 using VIRT0, should come after Probe-1 and Probe-2 in the probe configuration list.  PiFire should do this automatically, but it's good to know in case any errors are experienced.
-
-Theoretically, virtual probes can be stacked, meaning if you want to use a virtual probe as input into another virtual probe that should be possible, as long as the inputs from one virtual probe into the other are first in the probe configuration list.  
-```
+> Theoretically, virtual probes can be stacked, meaning if you want to use a virtual probe as input into another virtual probe that should be possible, as long as the inputs from one virtual probe into the other are first in the probe configuration list.  
 
 #### Display & Button Input
 

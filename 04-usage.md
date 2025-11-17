@@ -8,17 +8,15 @@ If you've finished with the installation and configuration, PiFire will be ready
 
 It's recommended at least taking a peek at the PiFire overview video below.  It covers the basics of operation, settings and control.  
 
-> **📝 Note**
->
-This video is for the previous version and will be updated soon.
-```
+{: .note }
+> This video is for the previous version and will be updated soon.
 
 [![YouTube Demo](img/photos/Video-Link-Image-sm.png)](https://youtu.be/zifl0_sfFBA)
 
 If you setup a hostname (ex. pifire.local) when flashing your SD Card, it's likely you can simply access the WebUI by typing [http://pifire.local](http://pifire.local) into your browser.  If that doesn't work for you, simply navigate to the IP address of your device for example (you can usually find the IP address of your device from looking at your router's configuration/status pages). My router typically assigns IPs with prefixes of 192.168.YYY.XXX.  I'll use examples on my home network here, so you'll see URLs like: http://192.168.10.42  Yours may look different depending on your routers firmware/manufacturer (i.e. 10.10.0.XXX, etc.)
-> **📝 Note**
->
-**Note:** It's highly recommended to set a static IP for your Pi in your router's configuration.  This will vary from manufacturer to manufacturer and is not covered in this guide.  A static IP ensures that you will be able to access your device reliably, without having to check your router for a new IP every so often.   
+
+{: .note }
+> It's highly recommended to set a static IP for your Pi in your router's configuration.  This will vary from manufacturer to manufacturer and is not covered in this guide.  A static IP ensures that you will be able to access your device reliably, without having to check your router for a new IP every so often.   
 
 #### The Dashboard
 The interface / webui is broken out several pages. The first is the dashboard view where you can check the current status of the grill, and control the modes. Clicking the PiFire logo in the upper left will always take you back to the dashboard from whatever screen you are on.  
@@ -28,10 +26,8 @@ The interface / webui is broken out several pages. The first is the dashboard vi
 
 Pressing/Clicking the menu items at the top of the page or the hamburger icon in the upper right of the interface (if on a small screen), allows you to also access to the other screens.  
 
-> **📝 Note**
->
-You will not see temperatures displayed until you are in startup, operation, or monitor mode.  If you have an attached display, the screen will remain black/blank until Pifire is in startup, operation or monitor mode - or if you have interacted with the input(buttons or encoder knob). 
-```
+{: .note }
+> You will not see temperatures displayed until you are in startup, operation, or monitor mode.  If you have an attached display, the screen will remain black/blank until Pifire is in startup, operation or monitor mode - or if you have interacted with the input(buttons or encoder knob). 
 
 Initially you will have four controls at the bottom of the screen.
 
@@ -69,15 +65,13 @@ Once you've set a target temperature for the hold mode, the control panel will h
 
 * **Timer** - Relatively self explanatory, but you can set a timer which will send a notification (if enabled) when it expires.  This timer will be visible at the top of the dashboard while running and can be paused, stopped, started from there.  The timer visibility can be toggled on any page from the title bar, next to the menu select icon. 
 
-```warning
-##### A Note on "Safety" Features
-
-PiFire has some basic built in safety features which are configurable in the settings section.
-
-* **Low Temperature Shutdown** - If you're like me, you may have experienced your fire going out in the firepot which leads to the grill dumping it's entire load of pellets into barrel.  This is both a pain to clean up and something that is completely avoidable.  PiFire will check the temperature before startup, after startup and during Smoke and Hold modes to ensure that the temperature never drops below the startup temperature.  If it does, it will immediately stop the grill, and send a notification (if notifications are enabled).  Note that this is not checked during Monitor mode.     
-
-* **High Temperature Shutdown** - Now, I've never had this happen to me, but it might be possible to exceed safe temperature limits in your smoker grill.  During, startup, smoke, hold and monitor modes, PiFire will monitor the temperature to make sure it doesn't exceed the maximum grill temperature set in the settings.json file. If the temperature exceeds these levels, PiFire will immediately stop the grill, and send a notification (if notifications are enabled).
-```
+{: .warning-title }
+> A Note on "Safety" Features
+>
+> PiFire has some basic built in safety features which are configurable in the settings section.
+> * **Low Temperature Shutdown** - If you're like me, you may have experienced your fire going out in the firepot which leads to the grill dumping it's entire load of pellets into barrel.  This is both a pain to clean up and something that is completely avoidable.  PiFire will check the temperature before startup, after startup and during Smoke and Hold modes to ensure that the temperature never drops below the startup temperature.  If it does, it will immediately stop the grill, and send a notification (if notifications are enabled).  Note that this is not checked during Monitor mode.     
+>
+>* **High Temperature Shutdown** - Now, I've never had this happen to me, but it might be possible to exceed safe temperature limits in your smoker grill.  During, startup, smoke, hold and monitor modes, PiFire will monitor the temperature to make sure it doesn't exceed the maximum grill temperature set in the settings.json file. If the temperature exceeds these levels, PiFire will immediately stop the grill, and send a notification (if notifications are enabled).
 
 Example of icon that appears in error conditions:
 
@@ -87,10 +81,8 @@ Example of icon that appears in error conditions:
 
 If you have notifications configured (see Settings), you can setup notifications for different events from the dashboard. Clicking the bell/bell-slash icon will bring up a dialog for you to select notifications for a particular probe.
 
-> **📝 Note**
->
-Starting with v1.9.0, you *must* click on the toggle switch beside the particular notification type in the dialog box to enable that notification.  
-```
+{: .note }
+> Starting with v1.9.0, you *must* click on the toggle switch beside the particular notification type in the dialog box to enable that notification.  
 
 ![Notification Temperature Target](/img/webui/PiFire-Dashboard-07.png)
 
@@ -289,9 +281,8 @@ The first section is Debug Options, which provides various options that can be u
 
 The Data Management card allows you to manage your PiFire data.  Here you can backup and restore your settings (including probes/probe profiles) and Pellet Database (including the logs).  You can also choose to delete data for history, events, pellets.  You can reset all settings, logs and databases by selecting Reset to Factory Settings.  
 
-```warning
-Resetting to factory settings will remove any settings you had for modules and may return the system to defaults.  You may have to follow instructions on the [installation page](install#changing-modules-later-after-installation) to configure your modules again.  
-```
+{: .warning }
+> Resetting to factory settings will remove any settings you had for modules and may return the system to defaults.  You may have to follow instructions on the [installation page](install#changing-modules-later-after-installation) to configure your modules again.  
 
 ![Admin](/img/webui/PiFire-Admin-02.png)
 
@@ -361,10 +352,8 @@ If you select Hold, you can then select a temperature by pressing <kbd>Up</kbd> 
 
 ![Menu Hold-Temp](/img/display/PiFire-Display-09.png)
 
-> **📝 Note**
->
-If you do not press `Enter` after selecting a temperature, the set point will not be selected. 
-```
+{: .note }
+> If you do not press `Enter` after selecting a temperature, the set point will not be selected. 
 
 This should set Hold Mode at the selected temperature: 
 

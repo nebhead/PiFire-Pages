@@ -43,10 +43,8 @@ Uses a very similar format to the cookfile format such that many of the same fun
 
   + __unpack_thumb(thumbname, filename)__ - Function used to uncompress the thumbnail only for a specific compressed file into a temporary folder.  Used to display thumbs in a filelist without having to unpack ALL assets. 
 
-> **⚠️ Warning**
->
-This specification, and contents are currently under development and may be updated periodically to improve accuracy and information.  
-```
+{: .warning }
+> This specification, and contents are currently under development and may be updated periodically to improve accuracy and information.  
 
 ### Compression
 
@@ -345,7 +343,5 @@ The assets file stores pointers to all of the asset (image) files in the assets 
 
 Others notes about assets/media stored in the file.  
 
-> **📝 Note**
->
-Image files added to the recipe file are rotated, resized (800x600 maximum size) and converted to JPEG format by PiFire automatically.  When images are added to PiFire, they will automatically have a 128x128 thumbnail created, and added to the '/assets/thumbnails/' folder with a corresponding name.
-```
+{: .note }
+> Image files added to the recipe file are rotated, resized (800x600 maximum size) and converted to JPEG format by PiFire automatically.  When images are added to PiFire, they will automatically have a 128x128 thumbnail created, and added to the '/assets/thumbnails/' folder with a corresponding name.
