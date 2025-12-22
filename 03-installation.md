@@ -17,10 +17,7 @@ curl https://raw.githubusercontent.com/nebhead/pifire/main/auto-install/install.
 
 It's recommended to watch the video and follow along with these steps below, to get you up and running quickly.  
 
-{: .note }
-> This install video is for previous versions, but is still generally relevant.
-
-[![YouTube Demo](img\photos\pifire-video-image-sm.jpg)](https://youtu.be/Bena9Yq00VM)
+[![YouTube Demo](img\photos\pifire-video-image-sm.jpg)](https://youtu.be/xiSefOyzP4g?si=cHO6O8BCYZHnRWH_)
 
 ### Raspberry Pi - Flash and Prepare SD Card
 
